@@ -54,8 +54,9 @@ html, body { height: 100%; overflow: hidden; }
 @media (pointer: coarse) { :root { --below: 120px; } }
 body { color: var(--ink); font: 15px/1.45 var(--sans); }
 .page {
-  position: absolute; top: var(--above); left: 0; right: 0; z-index: 1;
-  height: calc(100vh + var(--below)); height: calc(100lvh + var(--below));
+  /* Starts in the strip above the screen, so what scrolls passes under the clock too */
+  position: absolute; top: 0; left: 0; right: 0; z-index: 1; padding-top: var(--above);
+  height: calc(100vh + var(--above) + var(--below)); height: calc(100lvh + var(--above) + var(--below));
   overflow-x: hidden; overflow-y: auto; overscroll-behavior: none;
 }
 a { color: inherit; text-decoration: none; }
