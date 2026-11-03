@@ -127,7 +127,8 @@ main { display: grid; place-items: center; padding: 8px 12px 28px; }
 /* Planets */
 /* Holding a planet on a phone: no lifted rectangle, link preview or grey flash, just
    the planet's own pressed look. A tap opens it as usual. */
-.planet { z-index: 2; border-radius: 50%; outline: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; -webkit-user-select: none; user-select: none; }
+.planet { z-index: 2; border-radius: 50%; outline: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; -webkit-user-select: none; user-select: none; -webkit-user-drag: none; }
+.planet img { -webkit-user-drag: none; -webkit-touch-callout: none; pointer-events: none; }
 .planet .ball { position: relative; width: 100%; height: 100%; animation: float var(--f, 9s) ease-in-out infinite; animation-delay: var(--fd, 0s); }
 .planet .ball::after { /* hover ring in the planet's colour */
   content: ""; position: absolute; inset: calc(50% - var(--disc) / 2); border-radius: 50%;
@@ -241,23 +242,23 @@ a.planet:hover .label strong svg, a.planet:focus-visible .label strong svg { tra
       <path class="star" d="M146 28.4 Q146 30 147.44 30 Q146 30 146 31.6 Q146 30 144.56 30 Q146 30 146 28.4Z"><animate attributeName="opacity" values="1;.3;1" dur="7s" repeatCount="indefinite"/></path>
     </svg>
 
-    <a class="body planet sun" href="mailto:mail@ivolopes.com" aria-label="Email Ivo Lopes" title="mail@ivolopes.com">
+    <a draggable="false" class="body planet sun" href="mailto:mail@ivolopes.com" aria-label="Email Ivo Lopes" title="mail@ivolopes.com">
       <div class="ball"><img src="assets/sun.webp" alt="" width="646" height="646" fetchpriority="high"></div>
     </a>
 
-    <a class="body planet qa below" href="https://qa.ivolopes.com">
+    <a draggable="false" class="body planet qa below" href="https://qa.ivolopes.com">
       <div class="ball"><img src="assets/qa.webp" alt="" width="358" height="358"></div>
       <span class="label"><strong>QA <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></strong><span data-t="qa">Software quality, tested with care.</span></span>
     </a>
-    <a class="body planet art right" href="https://art.ivolopes.com">
+    <a draggable="false" class="body planet art right" href="https://art.ivolopes.com">
       <div class="ball"><img src="assets/art.webp" alt="" width="372" height="372"></div>
       <span class="label"><strong>ART <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></strong><span data-t="art">Handmade ceramics in clay and time.</span></span>
     </a>
-    <a class="body planet moss right" href="https://moss.ivolopes.com">
+    <a draggable="false" class="body planet moss right" href="https://moss.ivolopes.com">
       <div class="ball"><img src="assets/moss.webp" alt="" width="456" height="456"></div>
       <span class="label"><strong>MOSS <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></strong><span data-t="moss">Music for inner worlds.</span></span>
     </a>
-    <a class="body planet stage left" href="https://stage.ivolopes.com">
+    <a draggable="false" class="body planet stage left" href="https://stage.ivolopes.com">
       <div class="ball"><img src="assets/stage.webp" alt="" width="436" height="436"></div>
       <span class="label"><strong>STAGE <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></strong><span data-t="stage">Movement, presence and storytelling.</span></span>
     </a>
