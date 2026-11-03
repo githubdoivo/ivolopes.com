@@ -124,7 +124,9 @@ main { display: grid; place-items: center; padding: 8px 12px 28px; }
 }
 
 /* Planets */
-.planet { z-index: 2; border-radius: 50%; outline: none; }
+/* Holding a planet on a phone: no lifted rectangle, link preview or grey flash, just
+   the planet's own pressed look. A tap opens it as usual. */
+.planet { z-index: 2; border-radius: 50%; outline: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; -webkit-user-select: none; user-select: none; }
 .planet .ball { position: relative; width: 100%; height: 100%; animation: float var(--f, 9s) ease-in-out infinite; animation-delay: var(--fd, 0s); }
 .planet .ball::after { /* hover ring in the planet's colour */
   content: ""; position: absolute; inset: calc(50% - var(--disc) / 2); border-radius: 50%;
